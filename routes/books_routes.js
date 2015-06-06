@@ -1,9 +1,7 @@
 'use strict';
 
 var Book = require('../models/Book');
-
 var bodyparser = require('body-parser');
-
 var eatAuth = require('../lib/eat_auth')(process.env.APP_SECRET);
 
 var errorResponse = function(err, res) {
