@@ -39,6 +39,6 @@ booksApp.config(['$routeProvider', function($routeProvider) {
       redirectTo: '/books'
     })
     .otherwise({
-      redirectTo: '/create_user'
+      redirectTo: '/sign_in'
     });
 }]);

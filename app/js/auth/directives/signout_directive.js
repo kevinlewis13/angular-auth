@@ -3,7 +3,7 @@
 module.exports = function(app) {
   app.directive('signoutDirective', function() {
     return {
-      restrict: 'AC',
+      restrict: 'A',
       replace: true,
       scope: {},
       template: '<div data-ng-show="signedIn()"><button type ="button" data-ng-click="signOut()">Sign Out</button></div>',
@@ -15,7 +15,7 @@ module.exports = function(app) {
         $scope.signOut = function() {
           console.log('clicked');
           auth.signOut();
-          $location.path('/create_user');
+          $location.path('/sign_in');
         };
       }]
     };

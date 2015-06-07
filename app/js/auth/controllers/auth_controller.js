@@ -3,6 +3,7 @@
 module.exports = function(app) {
   app.controller('authController', ['$scope', '$location', 'auth', function($scope, $location, auth) {
 
+    //I'm not sure this does anything.
     if(auth.isSignedIn()) $location.path('/books');
 
     $scope.errors = [];
@@ -12,7 +13,9 @@ module.exports = function(app) {
         auth.create(user, function(err) {
           if(err) {
             console.log(err);
+
             return $scope.errors.push({msg: 'could not create user'});
+
           }
 
           $location.path('/books');
@@ -22,6 +25,7 @@ module.exports = function(app) {
           if(err) {
             console.log(err);
             $scope.errors.push({msg: 'could not sign in'});
+            $location.path('/sign_in')
           }
 
           $location.path('/books');
