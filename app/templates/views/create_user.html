@@ -1,0 +1,11 @@
+<section data-ng-controller="authController">
+  <form name="userForm" data-ng-submit="authSubmit(user)">
+    <label for="username">Username</label>
+    <input required type="text" name="username" data-ng-model="user.username">
+    <label for="password">Password</label>
+    <input required type="password" name="password" data-ng-model="user.password">
+    <label for="pw_confirm">Enter Your Password Again</label>
+    <input required type="password" name="pw_confirm" data-ng-model="user.pw_confirm">
+    <button type="submit" data-ng-disabled="userForm.$invalid">Create Account</button>
+  </form>
+</section>

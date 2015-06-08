@@ -42,7 +42,7 @@ module.exports = function(router, passport) {
     });
   });
 
-  router.get('/log_in', passport.authenticate('basic', {session: false}), function (req, res) {
+  router.get('/sign_in', passport.authenticate('basic', {session: false}), function (req, res) {
 
     req.user.generateToken(process.env.APP_SECRET, function (err, token) {
       if (err) {

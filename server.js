@@ -6,6 +6,8 @@ var passport = require('passport');
 
 var app = express();
 
+app.use(express.static(__dirname + '/build'));
+
 process.env.APP_SECRET = process.env.APP_SECRET || 'changethisdonotleaveitasitis!';
 
 var booksRoutes = express.Router();
@@ -15,7 +17,6 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/books_developm
 //creates collection? database?
 
 app.use(passport.initialize());
-app.use(express.static(__dirname + '/build'));
 
 require('./lib/passport_strategy')(passport);
 
